@@ -1,0 +1,24 @@
+{
+  "configuration": {
+    "backup_media": {
+      "name": "Ruta del medio de backup",
+      "description": "Ruta de destino bajo /share para guardar el repositorio de Kopia"
+    },
+    "repository_subdir": {
+      "name": "Subcarpeta del repositorio",
+      "description": "Nombre de subcarpeta que se crea dentro de backup_media"
+    },
+    "snapshot_paths": {
+      "name": "Rutas de snapshot",
+      "description": "Lista de rutas que se incluiran en los snapshots"
+    },
+    "server_username": {
+      "name": "Usuario del servidor",
+      "description": "Usuario usado para iniciar sesión en la interfaz web de Kopia"
+    },
+    "password": {
+      "name": "Contraseña del repositorio",
+      "description": "Contraseña usada para crear/conectar el repositorio de Kopia"
+    }
+  }
+}

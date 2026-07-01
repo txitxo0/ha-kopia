@@ -1,0 +1,35 @@
+name: Kopia
+version: "0.4.8"
+slug: ha-kopia
+description: Kopia backup for Home Assistant OS with repository stored under /share
+url: "https://github.com/txitxo0/ha-kopia"
+startup: services
+boot: auto
+init: false
+ingress: false
+panel_icon: mdi:folder-sync
+panel_title: Kopia
+arch:
+  - aarch64
+  - amd64
+map:
+  - share:rw
+  - backup:rw
+ports:
+  51515/tcp: 51515
+ports_description:
+  51515/tcp: Kopia Web UI
+options:
+  backup_media: "/share"
+  repository_subdir: "kopia-repository"
+  snapshot_paths:
+    - "/backup"
+  server_username: "kopia"
+  password: null
+schema:
+  backup_media: str
+  repository_subdir: str
+  snapshot_paths:
+    - str
+  server_username: str
+  password: password?
