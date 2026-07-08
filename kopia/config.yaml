@@ -1,5 +1,5 @@
 name: Kopia
-version: "0.4.8"
+version: "0.4.9"
 slug: ha-kopia
 description: Kopia backup for Home Assistant OS with repository stored under /share
 url: "https://github.com/txitxo0/ha-kopia"
@@ -15,6 +15,7 @@ arch:
 map:
   - share:rw
   - backup:rw
+  - homeassistant_config:rw
 ports:
   51515/tcp: 51515
 ports_description:
