@@ -224,7 +224,7 @@ sync_repository() {
 
   validate_sync_repository_common "$repository_json" "$target_label" || return 0
 
-  cmd=(kopia repository sync-to "$type")
+  cmd=(repository sync-to "$type")
 
   case "$type" in
     filesystem)
@@ -487,7 +487,7 @@ run_scheduled_sync() {
 
 start_server() {
   bashio::log.info "Starting Kopia Server at 0.0.0.0:51515"
-  exec kopia_cmd server start \
+  exec kopia --config-file="${KOPIA_CONFIG_FILE}" server start \
     --address=0.0.0.0:51515 \
     --server-username="${SERVER_USERNAME}" \
     --server-password="${PASSWORD}" \
