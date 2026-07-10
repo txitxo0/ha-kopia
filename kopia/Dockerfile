@@ -5,7 +5,7 @@ ARG TARGETARCH
 ARG KOPIA_VERSION=latest
 
 RUN set -eux; \
-		apk add --no-cache bash jq curl tar ca-certificates; \
+		apk add --no-cache bash jq curl tar ca-certificates dcron; \
 		if ! apk add --no-cache kopia; then \
 			echo "Package 'kopia' is not available in Alpine repositories. Falling back to official GitHub binary."; \
 			ARCH="${TARGETARCH:-$(uname -m)}"; \

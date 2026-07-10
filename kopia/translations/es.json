@@ -12,6 +12,128 @@
       "name": "Rutas de snapshot",
       "description": "Lista de rutas que se incluiran en los snapshots"
     },
+    "sync_enabled": {
+      "name": "Habilitar sincronizacion programada",
+      "description": "Ejecuta las sincronizaciones del repositorio automaticamente usando la expresion cron de abajo"
+    },
+    "sync_schedule": {
+      "name": "Horario de sincronizacion",
+      "description": "Expresion cron de 5 campos, por ejemplo 0 3 * * *"
+    },
+    "sync_to_repositories": {
+      "name": "Destinos de sincronizacion",
+      "description": "Repositorios secundarios opcionales que reciben una sincronizacion Kopia desde el repositorio principal de Home Assistant al arrancar el add-on y segun el horario configurado",
+      "fields": {
+        "name": {
+          "name": "Nombre",
+          "description": "Etiqueta amigable que aparece en los logs"
+        },
+        "type": {
+          "name": "Tipo de backend",
+          "description": "Backend de almacenamiento usado por este destino"
+        },
+        "path": {
+          "name": "Ruta",
+          "description": "Ruta de filesystem o SFTP para el repositorio de destino"
+        },
+        "url": {
+          "name": "URL",
+          "description": "URL WebDAV del repositorio de destino"
+        },
+        "host": {
+          "name": "Host",
+          "description": "Nombre del host SFTP"
+        },
+        "port": {
+          "name": "Puerto",
+          "description": "Puerto SFTP, normalmente 22"
+        },
+        "bucket": {
+          "name": "Bucket",
+          "description": "Nombre del bucket para S3, GCS o B2"
+        },
+        "container": {
+          "name": "Contenedor",
+          "description": "Nombre del contenedor de Azure Blob"
+        },
+        "prefix": {
+          "name": "Prefijo",
+          "description": "Subdirectorio o prefijo de objetos opcional dentro del backend de destino"
+        },
+        "endpoint": {
+          "name": "Endpoint",
+          "description": "Endpoint S3 personalizado para proveedores no AWS como Backblaze o MinIO"
+        },
+        "region": {
+          "name": "Region",
+          "description": "Region S3 cuando el proveedor la requiera"
+        },
+        "username": {
+          "name": "Usuario",
+          "description": "Usuario para WebDAV o SFTP"
+        },
+        "password": {
+          "name": "Contrasena",
+          "description": "Credencial usada por WebDAV o SFTP"
+        },
+        "access_key": {
+          "name": "Access key",
+          "description": "Access key ID de S3"
+        },
+        "secret_key": {
+          "name": "Secret key",
+          "description": "Secret access key de S3"
+        },
+        "account_name": {
+          "name": "Nombre de cuenta",
+          "description": "Nombre de la cuenta de almacenamiento de Azure"
+        },
+        "account_key": {
+          "name": "Clave de cuenta",
+          "description": "Clave de la cuenta de almacenamiento de Azure"
+        },
+        "storage_domain": {
+          "name": "Dominio de almacenamiento",
+          "description": "Override opcional del dominio de almacenamiento de Azure"
+        },
+        "sas_token": {
+          "name": "Token SAS",
+          "description": "Token SAS de Azure como alternativa a la clave de cuenta"
+        },
+        "credentials_json": {
+          "name": "JSON de credenciales",
+          "description": "JSON de cuenta de servicio de Google Cloud para GCS"
+        },
+        "key_id": {
+          "name": "Key ID",
+          "description": "Key ID de Backblaze B2"
+        },
+        "key": {
+          "name": "Key",
+          "description": "Application key de Backblaze B2"
+        },
+        "delete": {
+          "name": "Borrar blobs sobrantes",
+          "description": "Borra en el destino los blobs que ya no existan en el repositorio principal"
+        },
+        "must_exist": {
+          "name": "El destino debe existir",
+          "description": "Hace fallar este destino si el repositorio remoto no ha sido creado todavia"
+        },
+        "parallel": {
+          "name": "Paralelismo",
+          "description": "Numero de workers de copia en paralelo usados por Kopia"
+        },
+        "update": {
+          "name": "Actualizar objetos mas nuevos",
+          "description": "Permite que Kopia actualice blobs del destino cuando el origen sea mas nuevo"
+        },
+        "enabled": {
+          "name": "Habilitado",
+          "description": "Indica si este destino debe procesarse al arrancar"
+        }
+      }
+    },
     "server_username": {
       "name": "Usuario del servidor",
       "description": "Usuario usado para iniciar sesión en la interfaz web de Kopia"

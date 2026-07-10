@@ -12,6 +12,128 @@
       "name": "Snapshot paths",
       "description": "List of paths to include in snapshots"
     },
+    "sync_enabled": {
+      "name": "Enable scheduled sync",
+      "description": "Run repository syncs automatically using the cron expression below"
+    },
+    "sync_schedule": {
+      "name": "Sync schedule",
+      "description": "Cron expression with 5 fields, for example 0 3 * * *"
+    },
+    "sync_to_repositories": {
+      "name": "Sync destinations",
+      "description": "Optional secondary repositories that receive a Kopia sync from the primary Home Assistant repository on startup and on the configured schedule",
+      "fields": {
+        "name": {
+          "name": "Name",
+          "description": "Friendly label shown in logs"
+        },
+        "type": {
+          "name": "Backend type",
+          "description": "Storage backend used by this destination"
+        },
+        "path": {
+          "name": "Path",
+          "description": "Filesystem or SFTP path for the destination repository"
+        },
+        "url": {
+          "name": "URL",
+          "description": "WebDAV URL for the destination repository"
+        },
+        "host": {
+          "name": "Host",
+          "description": "SFTP host name"
+        },
+        "port": {
+          "name": "Port",
+          "description": "SFTP port, usually 22"
+        },
+        "bucket": {
+          "name": "Bucket",
+          "description": "Bucket name for S3, GCS or B2"
+        },
+        "container": {
+          "name": "Container",
+          "description": "Azure Blob container name"
+        },
+        "prefix": {
+          "name": "Prefix",
+          "description": "Optional subdirectory or object prefix inside the destination backend"
+        },
+        "endpoint": {
+          "name": "Endpoint",
+          "description": "Custom S3 endpoint for non-AWS providers such as Backblaze or MinIO"
+        },
+        "region": {
+          "name": "Region",
+          "description": "S3 region when required by the provider"
+        },
+        "username": {
+          "name": "Username",
+          "description": "Login name for WebDAV or SFTP"
+        },
+        "password": {
+          "name": "Password",
+          "description": "Credential used by WebDAV or SFTP"
+        },
+        "access_key": {
+          "name": "Access key",
+          "description": "S3 access key ID"
+        },
+        "secret_key": {
+          "name": "Secret key",
+          "description": "S3 secret access key"
+        },
+        "account_name": {
+          "name": "Account name",
+          "description": "Azure storage account name"
+        },
+        "account_key": {
+          "name": "Account key",
+          "description": "Azure storage account key"
+        },
+        "storage_domain": {
+          "name": "Storage domain",
+          "description": "Optional Azure storage domain override"
+        },
+        "sas_token": {
+          "name": "SAS token",
+          "description": "Azure SAS token as an alternative to the account key"
+        },
+        "credentials_json": {
+          "name": "Credentials JSON",
+          "description": "Google Cloud service account JSON for GCS"
+        },
+        "key_id": {
+          "name": "Key ID",
+          "description": "Backblaze B2 key ID"
+        },
+        "key": {
+          "name": "Key",
+          "description": "Backblaze B2 application key"
+        },
+        "delete": {
+          "name": "Delete extra blobs",
+          "description": "Delete destination blobs that no longer exist in the primary repository"
+        },
+        "must_exist": {
+          "name": "Destination must exist",
+          "description": "Fail this destination if the remote repository has not been created yet"
+        },
+        "parallel": {
+          "name": "Parallelism",
+          "description": "Number of parallel copy workers used by Kopia"
+        },
+        "update": {
+          "name": "Update newer objects",
+          "description": "Allow Kopia to update destination blobs when the source is newer"
+        },
+        "enabled": {
+          "name": "Enabled",
+          "description": "Whether this destination should be processed on startup"
+        }
+      }
+    },
     "server_username": {
       "name": "Server username",
       "description": "Username used to log in to the Kopia web server"

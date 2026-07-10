@@ -1,5 +1,5 @@
 name: Kopia
-version: "0.5.0"
+version: "0.7.0"
 slug: ha-kopia
 description: Kopia backup for Home Assistant OS with repository stored under /share
 url: "https://github.com/txitxo0/ha-kopia"
@@ -26,6 +26,9 @@ options:
   repository_subdir: "kopia-repository"
   snapshot_paths:
     - "/backup"
+  sync_enabled: false
+  sync_schedule: "0 3 * * *"
+  sync_to_repositories: []
   server_username: "kopia"
   password: null
 schema:
@@ -33,5 +36,35 @@ schema:
   repository_subdir: str
   snapshot_paths:
     - str
+  sync_enabled: bool
+  sync_schedule: str
+  sync_to_repositories:
+    - name: str
+      type: "list(filesystem|webdav|s3|sftp|azure|gcs|b2)"
+      path: "str?"
+      url: "str?"
+      host: "str?"
+      port: "int(1,65535)?"
+      bucket: "str?"
+      container: "str?"
+      prefix: "str?"
+      endpoint: "str?"
+      region: "str?"
+      username: "str?"
+      password: "password?"
+      access_key: "str?"
+      secret_key: "password?"
+      account_name: "str?"
+      account_key: "password?"
+      storage_domain: "str?"
+      sas_token: "password?"
+      credentials_json: "password?"
+      key_id: "str?"
+      key: "password?"
+      delete: "bool?"
+      must_exist: "bool?"
+      parallel: "int(1,32)?"
+      update: "bool?"
+      enabled: "bool?"
   server_username: str
   password: password?
